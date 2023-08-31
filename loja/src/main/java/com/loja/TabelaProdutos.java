@@ -23,4 +23,8 @@ public class TabelaProdutos {
         this.produtos.add(apontador);
         this.produtos.add(caderno);
     }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
 }
