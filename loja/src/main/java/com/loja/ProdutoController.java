@@ -1,6 +1,7 @@
 package com.loja;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,4 +20,12 @@ public class ProdutoController {
     public List<Produto> buscarTodosOsProdutos() {
         return this.tabelaProdutos.getProdutos();
     }
+
+    @GetMapping("/{produtoId}")
+    public Produto buscarProdutoPeloId(@PathVariable int produtoId) {
+        Produto produtoProcurado = this.tabelaProdutos.getProdutosById(produtoId);
+
+        return produtoProcurado;
+    }
+
 }

@@ -16,15 +16,43 @@ public class TabelaProdutos {
         Produto lapis = new Produto(3, "Lápis Faber Castell", "Lápis Faber Castell comum", 2.99);
         Produto apontador = new Produto(4, "Apontador", "Apontador comum com reservatório", 7.99);
         Produto caderno = new Produto(5, "Caderno espiral", "Caderno espiral de 96 folhas", 15.99);
+        Produto controle = new Produto(6, "Controle do projetor", "Controle do projetor Epson", 69.99);
+        Produto tesoura = new Produto(7, "Tesoura escolar", "Tesoura escolar com cabo colorido", 4.99);
+        Produto cola = new Produto(8, "Cola líquida", "Cola líquida para papel", 1.49);
+        Produto marcador = new Produto(9, "Marcador de texto", "Marcador de texto amarelo", 2.29);
+        Produto regua = new Produto(10, "Régua de 30 cm", "Régua de plástico transparente", 0.99);
 
         this.produtos.add(caneta);
         this.produtos.add(borracha);
         this.produtos.add(lapis);
         this.produtos.add(apontador);
         this.produtos.add(caderno);
+        this.produtos.add(controle);
+        this.produtos.add(tesoura);
+        this.produtos.add(cola);
+        this.produtos.add(marcador);
+        this.produtos.add(regua);
     }
 
     public List<Produto> getProdutos() {
         return produtos;
+    }
+
+    /**
+     * Método que busca um produto pelo seu ID
+     * @param produtoId
+     * @return
+     */
+    public Produto getProdutosById(int produtoId) {
+        Produto produtoProcurado = null;
+
+        for (Produto produto : this.produtos) {
+           if (produto.getId() == produtoId) {
+               produtoProcurado = produto;
+               break;
+           }
+        }
+
+        return produtoProcurado;
     }
 }
